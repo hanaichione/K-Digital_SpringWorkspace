@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byType">
+	<!-- 생성된 빈 (객체) 이용 타입에 맞는 set 함수 자동 주입, Person에 빈 주입 property 태그 필요 없음 -->
+
+	<bean id="xx" class="com.spring.Cat">
+		<constructor-arg name="catName" value="야옹이"></constructor-arg>
+		<constructor-arg name="catAge" value="10"></constructor-arg>
+	</bean>
+	<bean id="yy" class="com.spring.Dog">
+		<property name="dogName" value="멍멍이"></property>
+		<property name="dogAge" value="5"></property>
+	</bean>
+
+	<bean id="onePerson" class="com.spring.Person">
+		<property name="username">
+			<value>홍길동</value>
+		</property>
+		<property name="age" value="10"></property>
+		<!-- <property name="cat" ref="catBean"></property>
+		<property name="dog">
+			<ref bean="dogBean" /> 
+		</property> -->
+		<!-- <constructor-arg name="username" value="홍길동"></constructor-arg> <constructor-arg 
+			name="age" value="10"></constructor-arg> <constructor-arg name="cat" ref="catBean"></constructor-arg> 
+			<constructor-arg name="dog" ref="dogBean"></constructor-arg> -->
+	</bean>
+
+</beans>

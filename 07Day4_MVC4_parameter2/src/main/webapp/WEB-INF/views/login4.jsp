@@ -1,0 +1,21 @@
+<%@page import="com.dto.LoginDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	login4.jsp<br>
+	id : ${login.name}<br>
+	passwd : ${login.passwd }<br>
+	<hr>
+	<%
+		LoginDTO dto = (LoginDTO)request.getAttribute("login");
+		out.print(dto.getName()+"<br>");
+		out.print(dto.getPasswd());
+	%>
+</body>
+</html>
